@@ -10,7 +10,7 @@ using namespace std;
 
 int retorna_binario(int *ptr)
 {
-    int dec,aux,tag[]= {0},cache[]= {0},word[]= {0};
+    int dec,aux,tag,cache,word;
 
     unsigned int binario[16],binario1[16];
     for(int i=0; i<1; i++)
@@ -24,7 +24,7 @@ int retorna_binario(int *ptr)
         dec = dec/2;
 
     }
-    printf("\n");
+    printf("\nENDERECO: ");
     for(aux=1; aux<=16; aux++)
     {
 
@@ -32,7 +32,28 @@ int retorna_binario(int *ptr)
         printf("%d",binario1[aux]);
     }
 
+    printf("\nSUA TAG:");
+    for(aux=1; aux<=7; aux++)
+    {
 
+        binario1[aux] = binario[aux];
+        printf("%d",binario1[aux]);
+    }
+    printf("\nSUA CACHE:");
+    for(aux=8; aux<=13; aux++)
+    {
+
+        binario1[aux] = binario[aux];
+        printf("%d",binario1[aux]);
+    }
+    printf("\nSUA WORD:");
+    for(aux=14; aux<=16; aux++)
+    {
+
+        binario1[aux] = binario[aux];
+        printf("%d",binario1[aux]);
+    }
+    printf("\n\n");
 }
 
 
@@ -60,7 +81,7 @@ int main()
 
 
 
-   
+
 
 
     return 0;
