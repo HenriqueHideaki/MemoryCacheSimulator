@@ -8,11 +8,11 @@
 
 using namespace std;
 
-int retorna_binario(int *ptr)
+int decompor_binario(int *ptr)
 {
     int dec,aux,tag,cache,word;
 
-    unsigned int binario[16],binario1[16];
+    unsigned int binario[16],binario1[16],binario_tag[7],binario_cache[6],binario_word[3];
     for(int i=0; i<1; i++)
     {
         dec = ptr[i];
@@ -24,7 +24,7 @@ int retorna_binario(int *ptr)
         dec = dec/2;
 
     }
-    printf("\nENDERECO: ");
+    printf("\nENDERECO CONVERTIDO: ");
     for(aux=1; aux<=16; aux++)
     {
 
@@ -36,22 +36,22 @@ int retorna_binario(int *ptr)
     for(aux=1; aux<=7; aux++)
     {
 
-        binario1[aux] = binario[aux];
-        printf("%d",binario1[aux]);
+        binario_tag[aux] = binario[aux];
+        printf("%d",binario_tag[aux]);
     }
     printf("\nSUA CACHE:");
     for(aux=8; aux<=13; aux++)
     {
 
-        binario1[aux] = binario[aux];
-        printf("%d",binario1[aux]);
+        binario_cache[aux] = binario[aux];
+        printf("%d",binario_cache[aux]);
     }
     printf("\nSUA WORD:");
     for(aux=14; aux<=16; aux++)
     {
 
-        binario1[aux] = binario[aux];
-        printf("%d",binario1[aux]);
+        binario_word[aux] = binario[aux];
+        printf("%d",binario_word[aux]);
     }
     printf("\n\n");
 }
@@ -73,7 +73,8 @@ int main()
 
     for(int i=0; i<n; i++)
     {
-        retorna_binario(ptr+i);
+        cout << "Endereco : " << ptr[i];
+        decompor_binario(ptr+i);
     }
 
 
